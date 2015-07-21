@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Articles\Article.cs" />
     <Compile Include="NewsFeeds\Abstract_NewsFeed.cs" />
+    <Compile Include="NewsSubscriptions\SubscriberFactory.cs" />
+    <Compile Include="NewsSubscriptions\SubscriptionManager.cs" />
+    <Compile Include="ObserverPattern\Unsubscriber.cs" />
     <Compile Include="Phones\Abstract_Phone.cs" />
     <Compile Include="Server\Abstract_PhoneReference.cs" />
     <Compile Include="Server\Connection.cs" />

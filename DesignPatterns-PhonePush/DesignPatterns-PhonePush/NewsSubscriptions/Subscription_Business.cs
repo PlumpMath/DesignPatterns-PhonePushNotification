@@ -8,7 +8,10 @@ namespace DesignPatterns_PhonePush
 {
     public class Subscription_Business : Abstract_Subscription
     {
-        
+        public Subscription_Business(Abstract_Subscription subscription) : base(subscription)
+        { 
+            this.NewsFeedName = "Business";
+        }
 
 
     }

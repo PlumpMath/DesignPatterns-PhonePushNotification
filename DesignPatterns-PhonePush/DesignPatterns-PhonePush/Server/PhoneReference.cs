@@ -8,8 +8,8 @@ namespace DesignPatterns_PhonePush
 {
     public class PhoneReference : Abstract_PhoneReference
     {
-
-
+        public PhoneReference(string phoneID) : base(phoneID)
+        { }
 
     }
 }

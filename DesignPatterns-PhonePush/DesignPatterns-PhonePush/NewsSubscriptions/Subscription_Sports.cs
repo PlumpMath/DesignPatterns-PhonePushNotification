@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns_PhonePush
 {
-    public class Subscription_Sports
+    public class Subscription_Sports : Abstract_Subscription
     {
+        public Subscription_Sports(Abstract_Subscription subscription) : base(subscription)
+        {
+            this.NewsFeedName = "Sports";
+        }
+
+
+
+
     }
 }

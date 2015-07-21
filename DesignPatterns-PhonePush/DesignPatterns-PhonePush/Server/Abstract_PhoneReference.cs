@@ -9,7 +9,7 @@ namespace DesignPatterns_PhonePush
     public class Abstract_PhoneReference : IPhoneReference
     {
         public IConnection connection;
-        public ISubscription subsciptions;
+        public Abstract_Subscription subsciptions;
         protected string id;
 
         public Abstract_PhoneReference(string id)
@@ -17,6 +17,13 @@ namespace DesignPatterns_PhonePush
             this.id = id;
 
         }
+
+        public string GetSubscriptions()
+        {
+            return subsciptions.GetSubscriptions();
+        }
+
+
 
         public string PhoneID
         {

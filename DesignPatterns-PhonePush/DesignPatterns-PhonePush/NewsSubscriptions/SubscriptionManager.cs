@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns_PhonePush
 {
-    public class NewsFeed_Business : Abstract_NewsFeed
+    class SubscriptionManager
     {
-        public NewsFeed_Business()
+
+
+        public void SubscribePhoneTo(Server server, Abstract_Phone phone, string NewsFeed)
         {
-            this.FeedName = "Business";
+            server.SubscribePhoneToFeed(phone.id, NewsFeed);
         }
+
+
     }
 }

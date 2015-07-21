@@ -8,7 +8,10 @@ namespace DesignPatterns_PhonePush
 {
     public class NewsFeed_Sports : Abstract_NewsFeed
     {
-
+        public NewsFeed_Sports()
+        {
+            this.FeedName = "Sports";
+        }
 
     }
 }

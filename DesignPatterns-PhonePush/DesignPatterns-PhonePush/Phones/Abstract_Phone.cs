@@ -10,5 +10,16 @@ namespace DesignPatterns_PhonePush
     {
         public string id;
 
+        
+        public Abstract_Phone(string id)
+        {
+            this.id = id;
+        }
+
+
+
+
+
+
     }
 }

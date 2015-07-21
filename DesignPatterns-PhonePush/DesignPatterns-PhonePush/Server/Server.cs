@@ -8,34 +8,52 @@ namespace DesignPatterns_PhonePush
 {
     public class Server
     {
-        List<Abstract_PhoneReference> PhoneList;
-        List<INewsFeed> NewFeedList;
+        public List<Abstract_PhoneReference> PhoneList = new List<Abstract_PhoneReference>();
+        public List<Abstract_NewsFeed> NewsFeedList = new List<Abstract_NewsFeed>();
 
-        public Server()
+
+        public void SubscribePhoneToFeed(string PhoneID, string NewsFeedName)
         {
-
-        }
-
-        public void SubscribePhoneToFeed(string PhoneID, string NewsFeed)
-        {
-            // Check if phone is already in the phone list
-            Abstract_PhoneReference phone = null;
-            foreach (Abstract_PhoneReference PhoneReference in PhoneList)
+            //
+            // Check if the NewsFeed Exists
+            // 
+            Abstract_NewsFeed NewsFeed = null;
+            foreach (Abstract_NewsFeed newsFeed in this.NewsFeedList)
             {
-                if (PhoneReference.PhoneID == PhoneID)
+                if(newsFeed.FeedName == NewsFeedName)
                 {
-                    phone = PhoneReference;
+                    NewsFeed = newsFeed;
                     break;
                 }
             }
 
-            if (phone != null)
+
+            if (NewsFeed != null)
             {
-                Abstract_Subscription subscription = null;
-                
+                //
+                // Check if phone is already in the phone list
+                //
+                Abstract_PhoneReference phone = null;
+                foreach (Abstract_PhoneReference PhoneReference in PhoneList)
+                {
+                    if (PhoneReference.PhoneID == PhoneID)
+                    {
+                        phone = PhoneReference;
+                        break;
+                    }
+                }
+
+                //
+                // I phone exists, update it.
+                //
+                if (phone == null)
+                {
+                    phone = new Abstract_PhoneReference(PhoneID);
+                    PhoneList.Add(phone);
+                }
+                SubscriberFactory subscriber = new SubscriberFactory(phone, NewsFeedName, NewsFeed);
+                Console.WriteLine(phone.PhoneID + " is subscribed to: " + phone.GetSubscriptions());
             }
-
-
         }
 
     }

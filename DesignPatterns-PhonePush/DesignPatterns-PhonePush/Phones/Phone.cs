@@ -9,6 +9,9 @@ namespace DesignPatterns_PhonePush
     public class Phone : Abstract_Phone
     {
 
+        public Phone(string id) : base(id)
+        { }
+
 
     }
 }

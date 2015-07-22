@@ -10,7 +10,5 @@ namespace DesignPatterns_PhonePush
     {
         bool IsNewContectAvailable();
         string GetAllContent();
-        void AddPhone();
-
     }
 }

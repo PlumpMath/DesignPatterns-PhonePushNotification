@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns_PhonePush
 {
-    public class Abstract_PhoneReference : IPhoneReference
+    public class Abstract_PhoneReference
     {
-        public IConnection connection;
+        public Connection connection;
         public Abstract_Subscription subsciptions;
         protected string id;
 
@@ -17,22 +17,19 @@ namespace DesignPatterns_PhonePush
             this.id = id;
 
         }
+        public string PhoneID
+        {
+            get { return this.id; }
+        }
 
         public string GetSubscriptions()
         {
             return subsciptions.GetSubscriptions();
         }
 
-
-
-        public string PhoneID
+        public void SendNotification()
         {
-            get { return this.id; }
-        }
-
-        public void SendNotification(IConnection connection)
-        {
-
+            this.connection.Notify("You have new news articles ready to read.");
         }
 
     }

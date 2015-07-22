@@ -10,51 +10,68 @@ namespace DesignPatterns_PhonePush
     {
         public List<Abstract_PhoneReference> PhoneList = new List<Abstract_PhoneReference>();
         public List<Abstract_NewsFeed> NewsFeedList = new List<Abstract_NewsFeed>();
-
-
-        public void SubscribePhoneToFeed(string PhoneID, string NewsFeedName)
+        
+        public void SubscribePhoneToFeed(Abstract_PhoneReference phoneReference, Abstract_NewsFeed NewsFeed)
         {
-            //
-            // Check if the NewsFeed Exists
-            // 
+            SubscriberFactory subscriber = new SubscriberFactory(phoneReference, NewsFeed);
+        }
+
+
+        public string GetAllSubscribedContent(Abstract_PhoneReference phoneReference)
+        {
+            return phoneReference.subsciptions.GetAllContent();
+        }
+
+
+        public void BulkPushNotifications()
+        {
+            foreach (Abstract_PhoneReference phoneReference in PhoneList)
+            {
+                if (phoneReference.subsciptions.IsNewContectAvailable())
+                {
+                     phoneReference.SendNotification();
+                }
+            }
+        }
+
+
+        public Abstract_NewsFeed GetNewsFeed(string NewsFeedName)
+        {
             Abstract_NewsFeed NewsFeed = null;
             foreach (Abstract_NewsFeed newsFeed in this.NewsFeedList)
             {
-                if(newsFeed.FeedName == NewsFeedName)
+                if (newsFeed.FeedName == NewsFeedName)
                 {
                     NewsFeed = newsFeed;
                     break;
                 }
             }
-
-
-            if (NewsFeed != null)
-            {
-                //
-                // Check if phone is already in the phone list
-                //
-                Abstract_PhoneReference phone = null;
-                foreach (Abstract_PhoneReference PhoneReference in PhoneList)
-                {
-                    if (PhoneReference.PhoneID == PhoneID)
-                    {
-                        phone = PhoneReference;
-                        break;
-                    }
-                }
-
-                //
-                // I phone exists, update it.
-                //
-                if (phone == null)
-                {
-                    phone = new Abstract_PhoneReference(PhoneID);
-                    PhoneList.Add(phone);
-                }
-                SubscriberFactory subscriber = new SubscriberFactory(phone, NewsFeedName, NewsFeed);
-                Console.WriteLine(phone.PhoneID + " is subscribed to: " + phone.GetSubscriptions());
-            }
+            return NewsFeed;
         }
 
+
+        public Abstract_PhoneReference GetPhoneReference(string PhoneID)
+        {
+            Abstract_PhoneReference phoneRecord = null;
+            foreach (Abstract_PhoneReference phoneReference in this.PhoneList)
+            {
+                if (phoneReference.PhoneID == PhoneID)
+                {
+                    phoneRecord = phoneReference;
+                    break;
+                }
+            }
+            return phoneRecord;
+        }
+
+        
+        public Abstract_PhoneReference CreateNewPhoneReference(Abstract_Phone phoneObject)
+        {
+            Abstract_PhoneReference phoneRecord = new Abstract_PhoneReference(phoneObject.id);
+            Connection connectionString = new Connection(phoneObject);
+            phoneRecord.connection = connectionString;
+            PhoneList.Add(phoneRecord);
+            return phoneRecord;
+        }
     }
 }

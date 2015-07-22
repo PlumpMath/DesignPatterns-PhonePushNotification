@@ -10,7 +10,7 @@ namespace DesignPatterns_PhonePush
     {
         public string FeedName;
         private List<IObserver<bool>> observerList = new List<IObserver<bool>>();
-        private List<Article> articleList = new List<Article>();
+        protected  List<Article> articleList = new List<Article>();
 
         public IDisposable Subscribe(IObserver<bool> subscriber)
         {
@@ -28,6 +28,21 @@ namespace DesignPatterns_PhonePush
             }
         }
 
+        public string GetAllContent()
+        {
+            string content = "";
+            foreach (Article article in articleList)
+            {
+                content += (article.id + ": " + article.content + "\n");
+            }
+            return content;
+        }
+
+        public void AddNewArticle(Article article)
+        {
+            articleList.Add(article);
+            this.Notify_NewsUpdate();
+        }
 
 
     }

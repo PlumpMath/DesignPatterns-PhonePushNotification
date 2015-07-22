@@ -52,7 +52,6 @@
     <Compile Include="Server\IConnection.cs" />
     <Compile Include="NewsFeeds\INewsFeed.cs" />
     <Compile Include="Phones\IPhone.cs" />
-    <Compile Include="Server\IPhoneReference.cs" />
     <Compile Include="NewsSubscriptions\ISubscription.cs" />
     <Compile Include="NewsFeeds\NewsFeed_Business.cs" />
     <Compile Include="NewsFeeds\NewsFeed_Sports.cs" />
@@ -67,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

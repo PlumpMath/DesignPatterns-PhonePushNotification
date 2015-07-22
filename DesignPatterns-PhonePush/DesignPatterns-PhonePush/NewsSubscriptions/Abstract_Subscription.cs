@@ -11,16 +11,20 @@ namespace DesignPatterns_PhonePush
         // Decorator Design Pattern (Onion Layers)
         protected Abstract_Subscription OuterLayer;
         protected Abstract_Subscription InnerLayer;
+        protected Abstract_NewsFeed NewsFeed;
         protected string NewsFeedName = "";
         protected bool UpdateAvailable;
         protected IDisposable unsubscriber;
 
+        
 
 
-        public Abstract_Subscription(Abstract_Subscription outerLayer)
+
+        public Abstract_Subscription(Abstract_Subscription outerLayer, Abstract_NewsFeed NewsFeedObject)
         {
             this.OuterLayer = outerLayer;
             this.UpdateAvailable = false;
+            this.NewsFeed = NewsFeedObject;
         }
 
         public virtual string GetSubscriptions()
@@ -51,13 +55,14 @@ namespace DesignPatterns_PhonePush
             
         public string GetAllContent()
         {
+            this.UpdateAvailable = false; // clear the notification flag once the content has been recieved the first time.
             if (this.OuterLayer != null)
             {
-                return ("");
+                return (this.OuterLayer.GetAllContent() + this.NewsFeed.GetAllContent());
             }
             else
             {
-                return ("");
+                return (this.NewsFeed.GetAllContent());
             } 
         }
 
@@ -76,7 +81,7 @@ namespace DesignPatterns_PhonePush
         {
             if (NotificationAvailable)
             {
-                Console.WriteLine("There is a new update available");
+                Console.WriteLine("There is a new update available in " + this.NewsFeedName);
                 this.UpdateAvailable = true;
             }
 
@@ -91,12 +96,5 @@ namespace DesignPatterns_PhonePush
         {
             // Do nothing.
         }
-
-        public void AddPhone()
-        {
-            // Stub
-        }
-
-
     }
 }

@@ -8,20 +8,21 @@ namespace DesignPatterns_PhonePush
 {
     class SubscriberFactory
     {
-        public SubscriberFactory (Abstract_PhoneReference phoneReference, string FeedName, IObservable<bool> NewsFeed)
+        public SubscriberFactory (Abstract_PhoneReference phoneReference,  Abstract_NewsFeed NewsFeedObject)
         {
-            switch (FeedName)
+            IObservable<bool> NewsFeedObserver = (IObservable<bool>)NewsFeedObject;
+            switch (NewsFeedObject.FeedName)
             {
                 case "Business":
                     {
-                        phoneReference.subsciptions = new Subscription_Business(phoneReference.subsciptions);
-                        phoneReference.subsciptions.Subscribe(NewsFeed);
+                        phoneReference.subsciptions = new Subscription_Business(phoneReference.subsciptions, NewsFeedObject);
+                        phoneReference.subsciptions.Subscribe(NewsFeedObserver);
                         break;
                     }
                 case "Sports":
                     {
-                        phoneReference.subsciptions = new Subscription_Sports(phoneReference.subsciptions);
-                        phoneReference.subsciptions.Subscribe(NewsFeed);
+                        phoneReference.subsciptions = new Subscription_Sports(phoneReference.subsciptions, NewsFeedObject);
+                        phoneReference.subsciptions.Subscribe(NewsFeedObserver);
                         break;
                     }
             }

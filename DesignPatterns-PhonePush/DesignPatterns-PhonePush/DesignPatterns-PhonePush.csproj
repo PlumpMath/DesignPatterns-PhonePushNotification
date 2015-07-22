@@ -50,8 +50,6 @@
     <Compile Include="Server\Abstract_PhoneReference.cs" />
     <Compile Include="Server\Connection.cs" />
     <Compile Include="Server\IConnection.cs" />
-    <Compile Include="NewsFeeds\INewsFeed.cs" />
-    <Compile Include="Phones\IPhone.cs" />
     <Compile Include="NewsSubscriptions\ISubscription.cs" />
     <Compile Include="NewsFeeds\NewsFeed_Business.cs" />
     <Compile Include="NewsFeeds\NewsFeed_Sports.cs" />

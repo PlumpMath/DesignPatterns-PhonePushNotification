@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns_PhonePush
 {
-    public class Abstract_NewsFeed : INewsFeed, IObservable<bool>
+    public class Abstract_NewsFeed : IObservable<bool>
     {
         public string FeedName;
         private List<IObserver<bool>> observerList = new List<IObserver<bool>>();

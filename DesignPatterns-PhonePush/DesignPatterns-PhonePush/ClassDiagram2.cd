@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DesignPatterns_PhonePush.Article" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Articles\Article.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Abstract_NewsFeed" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAgCAAAAAAAICAAAAAAAAAAQAAEA=</HashCode>
+      <FileName>NewsFeeds\Abstract_NewsFeed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.NewsFeed_Business" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewsFeeds\NewsFeed_Business.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.NewsFeed_Sports" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewsFeeds\NewsFeed_Sports.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Abstract_Subscription" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAaAAAYABAAAAgAAAABKAAAAQAAAAAQIAAA=</HashCode>
+      <FileName>NewsSubscriptions\Abstract_Subscription.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.SubscriberFactory" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewsSubscriptions\SubscriberFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Subscription_Business" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewsSubscriptions\Subscription_Business.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Subscription_Sports" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewsSubscriptions\Subscription_Sports.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.SubscriptionManager" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAgAEAAAAA=</HashCode>
+      <FileName>NewsSubscriptions\SubscriptionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Unsubscriber" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObserverPattern\Unsubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Abstract_Phone" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAQAgAAAAgAAAAAgA=</HashCode>
+      <FileName>Phones\Abstract_Phone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Phone" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Phones\Phone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Program" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Abstract_PhoneReference" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAABABBAAAAAAAAAAACAAAAAAAAAgA=</HashCode>
+      <FileName>Server\Abstract_PhoneReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Connection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAA=</HashCode>
+      <FileName>Server\Connection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.PhoneReference" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Server\PhoneReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns_PhonePush.Server" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAgCAAAAAAAAAACAAAAACEAAgIAAAAAA=</HashCode>
+      <FileName>Server\Server.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DesignPatterns_PhonePush.ISubscription" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAA=</HashCode>
+      <FileName>NewsSubscriptions\ISubscription.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DesignPatterns_PhonePush.IConnection" Collapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Server\IConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

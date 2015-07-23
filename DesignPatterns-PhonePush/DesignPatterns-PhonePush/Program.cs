@@ -20,8 +20,7 @@ namespace DesignPatterns_PhonePush
             server.NewsFeedList.Add(SportsFeed);
 
             // Add Starting Articles
-            Article BusinessArticle1 = new Article("B1", "Business Article1");
-            
+            Article BusinessArticle1 = new Article("B1", "Business Article1");            
             Article SportsArticle1 = new Article("S1", "Sports Article1");
             BusinessFeed.AddNewArticle(BusinessArticle1);
             SportsFeed.AddNewArticle(SportsArticle1);
@@ -29,6 +28,7 @@ namespace DesignPatterns_PhonePush
             // Add Phones
             Abstract_Phone phone1 = new Phone("111");
             Abstract_Phone phone2 = new Phone("222");
+            // Subscribe Phones to Feeds
             phone1.SubscribeToNewsFeed(server, "Business");
             phone1.SubscribeToNewsFeed(server, "Sports");
             phone2.SubscribeToNewsFeed(server, "Sports");
